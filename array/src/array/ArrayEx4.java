@@ -32,8 +32,8 @@ public class ArrayEx4 {
             score2[i] = sc.nextInt();
         }
         System.out.println();
-        // 확인( 화면 출력 )
-        System.out.println(Arrays.toString(score2)); // [88, 78, 66, 13, 43, 71, 86, 67, 37, 21, 14, 14, 14, 14, 14]
+        // 확인
+        System.out.println(Arrays.toString(score2));
 
         sc.close();
 
