@@ -23,20 +23,23 @@ public class Student {
     }
 
     public Student(String stdno, String name) {
-        this.stdno = stdno;
+        // this.stdno = stdno;
+        this(stdno);
         this.name = name;
     }
 
     public Student(String stdno, String name, String address) {
-        this.stdno = stdno;
-        this.name = name;
+        // this.stdno = stdno;
+        // this.name = name;
+        this(stdno, name);
         this.address = address;
     }
 
     public Student(String stdno, String name, String address, String phone) {
-        this.stdno = stdno;
-        this.name = name;
-        this.address = address;
+        // this.stdno = stdno;
+        // this.name = name;
+        // this.address = address;
+        this(stdno, name, address);
         this.phone = phone;
     }
 
