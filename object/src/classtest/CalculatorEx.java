@@ -1,3 +1,5 @@
+package classtest;
+
 public class CalculatorEx {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
@@ -22,6 +24,5 @@ public class CalculatorEx {
 
         Calculator2 calculator2 = new Calculator2();
         calculator2.execute();
-
     }
 }

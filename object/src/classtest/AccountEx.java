@@ -10,11 +10,17 @@ public class AccountEx {
         System.out.println("입금 후 현재 잔액 : " + account.getBalance());
 
         // 출금하다
-        boolean success = account.withdraw(50000);
-        if (!success) {
+        int success = account.withdraw(50000);
+        if (success == -1) {
             System.out.println("잔액 부족");
         } else {
             System.out.println("출금 후 현재 잔액 : " + account.getBalance());
         }
+
+        printAccount(account);
+    }
+
+    static void printAccount(Account account) {
+
     }
 }

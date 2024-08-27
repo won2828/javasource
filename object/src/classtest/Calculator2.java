@@ -1,3 +1,5 @@
+package classtest;
+
 public class Calculator2 {
     // 같은 클래스 내부에서 다른 메소드 호출 가능
     // 이름만 사용하면 됨

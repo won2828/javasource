@@ -1,3 +1,5 @@
+package classtest;
+
 public class Calculator {
     void powerOn() {
         System.out.println("전원 켜기");
