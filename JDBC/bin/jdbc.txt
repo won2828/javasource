@@ -1,0 +1,52 @@
+// 096
+JDBC(Java Database Connectivity) : 자바와 데이터베이스의 상호 연동하는 벙법
+- Java 애플리케이션 내에서 JDBC 를 이용해서 데이터베이스에 접근
+
+- 드라이버 : 데이터베이스에 맞는 드라이버 준비(ojdbc버전번호.jar)
+- JDBC 프로그래밍 단계
+1) 드라이버 로드 Class.forName(오라클드라이버 이름)
+2) 드라이버를 데이터베이스 연결문 작성
+    url, user id, user password
+3) 1, 2 번 작업이 성공한다면 데이터베이스 서버와 연동하는 커넥션을 하나 얻게 됨
+4) 3) 에서 얻어낸 커넥션을 통해 Data 를 가져올 수 있게 됨
+5) ResultSet 객체(결과 행들을 담기 위한 객체) 사용
+
+// 1. 오라클 드라이버 로드
+Class.forName("oracle.jdbc.OracleDriver");
+
+// 2. 연결 문자열 작성
+// url, user, password
+// localhost(== 127.0.0.1) : 로컬 컴퓨터를 의미
+// DB 서버가 설치된 주소를 작성
+// 1521 : port 번호(오라클 서버의 기본 포트 번호)
+String url = "jdbc:oracle:thin:@localhost:1521:xe";
+String user = "scott";
+String password = "TIGER";
+
+// 3. connection 얻기
+con = DriverManager.getConnection(url, user, password);
+
+
+---------------------------------------------------------
+
+
+// 4. connection 을 통해서 실행하고자 하는 sql 구문 전송
+String sql = "SELECT * FROM emp WHERE EMPNO = 7369";
+pstmt = con.prepareStatement(sql);
+
+// 5. 전송된 sql 구문 실행
+rs = pstmt.executeQuery();
+
+// 6. 결과값이 담긴 rs 에서 하나씩 조회
+if (rs.next()) {
+    // numer => getInt() / varchar2 => getString() / date => getDate()
+    // () 안에는 컬럼 번호 or 컬럼명 가능
+    System.out.println("EMPNO : " +rs.getInt(1));
+    System.out.println("EMANE : " +rs.getString(2));
+    System.out.println("JOB : " +rs.getString(3));
+    System.out.println("MGR : " +rs.getInt(4));
+    System.out.println("HIREDATE : " +rs.getDate(5));
+    System.out.println("SAL : " +rs.getInt(6));
+    System.out.println("COMM : " +rs.getInt(7));
+    System.out.println("DEPTNO : " +rs.getInt(8));
+}
