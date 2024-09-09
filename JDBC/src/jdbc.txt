@@ -50,3 +50,7 @@ if (rs.next()) {
     System.out.println("COMM : " +rs.getInt(7));
     System.out.println("DEPTNO : " +rs.getInt(8));
 }
+
+
+- ~~~DAO(ex- EmpDAO, DeptDAO) 클래스 : DB CRUD 작업과 관련된 메소드 작성
+- ~~~DTO(ex- EmpDTO, DeptDTO) 클래스 : 클래스들끼리 데이터를 주고 받을 때 사용하는 클래스
