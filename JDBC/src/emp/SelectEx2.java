@@ -46,14 +46,15 @@ public class SelectEx2 {
             while (rs.next()) {
                 // numer => getInt() / varchar2 => getString() / date => getDate()
                 // () 안에는 컬럼 번호 or 컬럼명 가능
-                System.out.print("EMPNO : " + rs.getInt(1) + "\n");
-                System.out.print("EMANE : " + rs.getString(2) + "\n");
-                System.out.print("JOB : " + rs.getString(3) + "\n");
-                System.out.print("MGR : " + rs.getInt(4) + "\n");
-                System.out.print("HIREDATE : " + rs.getDate(5) + "\n");
-                System.out.print("SAL : " + rs.getInt(6) + "\n");
-                System.out.print("COMM : " + rs.getInt(7) + "\n");
-                System.out.printf("DEPTNO : " + rs.getInt(8) + "\n");
+                System.out.println("EMPNO : " + rs.getInt(1));
+                System.out.println("EMANE : " + rs.getString(2));
+                System.out.println("JOB : " + rs.getString(3));
+                System.out.println("MGR : " + rs.getInt(4));
+                System.out.println("HIREDATE : " + rs.getDate(5));
+                System.out.println("SAL : " + rs.getInt(6));
+                System.out.println("COMM : " + rs.getInt(7));
+                System.out.println("COMM : " + rs.getInt(7));
+                System.out.println("DEPTNO : " + rs.getInt(8));
                 System.out.println();
                 System.out.println();
             }
